@@ -1,0 +1,18 @@
+version: '3'
+services:
+  php-env:
+    build: .
+    ports:
+      - 8000:80
+
+
+  # mariadb:
+  #   image: 'mariadb:latest'
+  #   restart: 'always'
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: "1234"
+  #     MYSQL_USER: "admin"
+  #     MYSQL_DATABASE: "agenda"
+  #     MYSQL_PASSWORD: "1234"
+
+
