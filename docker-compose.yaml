@@ -4,12 +4,15 @@ services:
     build: .
     ports:
       - 8000:80
-
+    volumes:
+      - /opt/agenda/php.ini:/usr/local/etc/php/php.ini
 
   mysql-db:
     image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+    volumes:
+      - /opt/agenda/agenda.sql:/var/lib/mysql/agenda.sql
     ports:
       - 3306:3306
     environment:
