@@ -4,21 +4,18 @@ services:
     build: .
     ports:
       - 8000:80
-
-
   mysql-db:
     image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     ports:
       - 3306:3306
+    volumes:
+      - /opt/agenda/db/agenda.sql:/docker-entrypoint-initdb.d/agenda.sql
     environment:
-      MYSQL_DATABASE: agenda
       MYSQL_USER: admin
       MYSQL_PASSWORD: 1234
       MYSQL_ROOT_PASSWORD: 1234
-
-
   phpmyadmin:
     image: phpmyadmin:latest
     restart: always

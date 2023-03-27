@@ -11,4 +11,6 @@ sudo dnf install -y git > /dev/null 2>&1
 
 echo "Moving Dockerfile and docker-compose.yaml from host machine to guest machine [/opt/agenda/]"
 sudo mkdir /opt/agenda/ 
-sudo cp /tmp/Dockerfile /tmp/docker-compose.yaml /opt/agenda/
+sudo mkdir /opt/agenda/db/
+sudo cp /tmp/Dockerfile /tmp/docker-compose.yaml /tmp/php.ini /opt/agenda/
+sudo cp /tmp/agenda.sql /opt/db/agenda.sql
