@@ -8,7 +8,6 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 3306, host: 3306
   
   config.vm.provision "file", source: "./agenda.sql", destination: "/tmp/"
-  config.vm.provision "file", source: "./php.ini", destination: "/tmp/"
   config.vm.provision "file", source: "./Dockerfile", destination: "/tmp/"
   config.vm.provision "file", source: "./docker-compose.yaml", destination: "/tmp/"
   config.vm.provision "shell", path: "provision.sh"
